@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Televisions | Appliance Energy Australia</title>
+  <link rel="icon" type="image/png" href="images/PowerIcon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header" id="site-header"></header>
+
+  <main>
+    <h1>Television Energy Consumption</h1>
+    <p>Televisions are one of the most common entertainment appliances in Australian homes but they don't all use power the same way. A big screen, an older model, or hours of daily use can quietly push up how much electricity it draws.</p>
+
+    <h2>Yearly energy use by screen size</h2>
+    <p class="note">Just sample numbers for now, based on 5 hours of viewing a day. The real numbers will come once the data set from T01 (b) is plugged in.</p>
+    <ul class="bars" id="tv-chart" aria-label="Bar chart of yearly energy use by screen size"></ul>
+
+    <h2>Estimate a running cost</h2>
+    <div class="estimator">
+      <label for="watts">Power while on (watts)</label>
+      <input id="watts" type="number" min="1" value="95">
+
+      <label for="hours">Hours watched per day</label>
+      <input id="hours" type="number" min="0" max="24" step="0.5" value="5">
+
+      <label for="tariff">Electricity price (cents per kWh)</label>
+      <input id="tariff" type="number" min="0" step="0.5" value="33">
+
+      <p class="result" aria-live="polite">
+        About <span id="annual-kwh">0</span> kWh and <span id="annual-cost">$0</span> per year
+      </p>
+    </div>
+    <p class="note">kWh per year = watts &times; hours per day &times; 365 &divide; 1000</p>
+
+    <h2>Sample televisions</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Model</th>
+            <th scope="col">Screen size</th>
+            <th scope="col">Star rating</th>
+            <th scope="col">Power (W)</th>
+            <th scope="col">Energy per year (kWh)</th>
+          </tr>
+        </thead>
+        <tbody id="tv-rows"></tbody>
+      </table>
+    </div>
+
+    <p>Modern smart TVs also draw standby power to keep their network connection and fast start-up features running.</p>
+
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
