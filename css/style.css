@@ -1,0 +1,274 @@
+:root {
+  --logo-yellow: #f8e8a5;
+  --logo-orange: #eba746;
+  --logo-brown: #7d6744;
+  --brown-dark: #4a3b22;
+  --bg-color: #fdfbf7;
+  --text: #3b3020;
+  --line: #e6dcb9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.65;
+  background-color: var(--bg-color);
+  color: var(--text);
+}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: var(--logo-yellow);
+  border-bottom: 4px solid var(--logo-brown);
+}
+
+.logo-container {
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.logo-container:hover {
+  transform: scale(1.05);
+}
+
+#logo {
+  display: block;
+  height: 60px;
+  width: auto;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 0 40px;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin: 0 5px;
+}
+
+nav a {
+  display: block;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--brown-dark);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: var(--logo-orange);
+}
+
+nav a[aria-current="page"] {
+  background-color: var(--brown-dark);
+  color: var(--logo-yellow);
+}
+
+:focus-visible {
+  outline: 3px solid var(--logo-orange);
+  outline-offset: 2px;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  line-height: 1.2;
+  color: var(--brown-dark);
+}
+
+h2 {
+  margin: 2.25rem 0 0.5rem;
+  font-size: 1.4rem;
+  color: var(--brown-dark);
+}
+
+a {
+  color: var(--brown-dark);
+}
+
+.label-list {
+  padding-left: 1.2rem;
+}
+
+.label-list li {
+  margin-bottom: 0.35rem;
+}
+
+.note {
+  font-size: 0.9rem;
+  color: #6a5f4a;
+}
+
+.bars {
+  margin: 1.25rem 0 0.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.bars li {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr 5rem;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
+}
+
+.bar-track {
+  display: block;
+  height: 1.75rem;
+  background: #f0ead6;
+  border-radius: 3px;
+}
+
+.bar {
+  display: block;
+  height: 100%;
+  background: var(--logo-orange);
+  border-right: 3px solid var(--logo-brown);
+  border-radius: 3px 0 0 3px;
+}
+
+.bar-value {
+  font-weight: bold;
+  text-align: right;
+}
+
+.estimator {
+  max-width: 26rem;
+  padding: 1.25rem 1.5rem;
+  background: #ffffff;
+  border: 2px solid var(--logo-yellow);
+  border-radius: 8px;
+}
+
+.estimator label {
+  display: block;
+  margin-top: 0.75rem;
+}
+
+.estimator label:first-child {
+  margin-top: 0;
+}
+
+.estimator input {
+  width: 9rem;
+  padding: 0.35rem 0.5rem;
+  font: inherit;
+  border: 1px solid var(--logo-brown);
+  border-radius: 4px;
+}
+
+.result {
+  margin: 1.25rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.result span {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--brown-dark);
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+th,
+td {
+  padding: 0.6rem 0.9rem;
+  text-align: left;
+  border: 1px solid var(--line);
+}
+
+th {
+  background: var(--logo-yellow);
+  color: var(--brown-dark);
+}
+
+tbody tr:hover {
+  background: #fdf6d8;
+}
+
+.site-footer {
+  margin-top: auto;
+  padding: 15px;
+  text-align: center;
+  font-size: 0.9rem;
+  background-color: var(--logo-brown);
+  color: var(--logo-yellow);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 40rem) {
+  .site-header {
+    padding: 10px 15px;
+  }
+
+  nav ul {
+    margin-left: 10px;
+  }
+
+  main {
+    padding: 20px 15px;
+  }
+
+  .bars li {
+    grid-template-columns: 4.5rem 1fr 4.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main {
+    animation: none;
+  }
+
+  * {
+    transition: none !important;
+  }
+}
